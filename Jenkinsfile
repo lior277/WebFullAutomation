@@ -1,0 +1,1 @@
+DockerRunTest('airsoft-qa-automation')

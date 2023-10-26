@@ -1,0 +1,13 @@
+#launchtests.cmd
+ENV	remoteWebDriverUrl=http://zalenium.airsoftltd.com/wd/hub \
+	crmUrl=https://qa-auto01-crm.airsoftltd.com \
+	tradetradingPlatformUrl=https://qa-auto01-trade.airsoftltd.com \
+	apiKey=2TCYb446wpaL3BkQI0y6EzMEn8slSfPQAwE0d768IoKxiVYCE241583752334015 \
+	crmBaseUri=https://qa-auto01-crm.airsoftltd.com \
+	cBdBaseUri=https://crm-shop01.airsoftltd.com\
+	tradingPlatformBaseUri=https://qa-auto01-trade.airsoftltd.com \
+	mailPerfix=@auto.local \ 
+	password=Automation \
+	crmMongoDbConnection=mongodb+srv://admin:asdewq123@kube-prod01-cwsxo.mongodb.net/qa-automation01?retryWrites=true&w=majority \
+	dbname=qa-automation01 \
+	tableName=users 

@@ -1,0 +1,101 @@
+using System;
+using System.Linq;
+using System.Reflection;
+
+namespace AirSoftAutomationFramework.Internals.DAL.ConfigurationManagement
+{
+
+    public sealed class Configuration
+    {
+#pragma warning disable CS0414
+        public string _configType = Environment.GetEnvironmentVariable("configType");
+        public string _url = "lior";
+        //private string _crmUri;
+        //private string _cBdUrl;
+        //private string _cBdUri;
+        private string _tradetradingPlatformUrl;
+        private string _apiKey;
+        private string _mailPerfix;
+        private string _password;
+        private string _dbName;
+        private string _usersTable;
+        private string _mongoDbConnection;
+#pragma warning restore CS0414
+
+        private static Configuration _instance = null;
+        private static object chekLock = new object();
+        private Configuration() { }
+
+        public static Configuration Instance
+        {
+            get
+            {
+                lock (chekLock)
+                {
+                    if (_instance == null)
+                        _instance = new Configuration();
+                    return _instance;
+                }
+            }
+        }
+
+        public string GetValue(string environmentVariableKey)
+        {
+            object variableValue;
+            var environmentVariableValue = Environment.GetEnvironmentVariable(environmentVariableKey);
+
+            try
+            {
+                if (environmentVariableValue == null)
+                {
+                    GetType().GetMethods(BindingFlags.NonPublic | BindingFlags.Instance)
+                      .Where(m => m.Name.Contains(_configType))
+                      .FirstOrDefault()
+                      .Invoke(this, null);
+
+                    object ll = null;
+                    variableValue = typeof(Configuration)
+                    .GetMember(environmentVariableKey, BindingFlags.Public |
+                        BindingFlags.Instance).GetValue(ll);
+
+                    return variableValue.ToString();
+                }
+                else
+                {
+                    return environmentVariableValue;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        private string SetCrmProdConfiguration(string key)
+        {
+            _url = @"https://qa-auto01-crm.airsoftltd.com";
+            _tradetradingPlatformUrl = @"https://qa-auto01-trade.airsoftltd.com";
+            _apiKey = "2TCYb446wpaL3BkQI0y6EzMEn8slSfPQAwE0d768IoKxiVYCE241583752334015";
+            _mailPerfix = "@auto.local";
+            _password = "Automation";
+            _dbName = "qa-automation01";
+            _usersTable = "users";
+            _mongoDbConnection = "mongodb+srv://admin:asdewq123@kube-prod01-cwsxo.mongodb.net/qa-automation01?retryWrites=true&w=majority";
+
+            return key;
+        }
+
+        private string SetCbdDevConfiguration(string key)
+        {
+            _url = @"https://crm-shop01.airsoftltd.com/";
+            _apiKey = "TYxfmVognm8GXBGKNWL6QkI1qn5CN9QUGKS7Y8LWurV2zyEPthy1584355652284";
+            _mailPerfix = "@auto.local";
+            _password = "Automation";
+            _dbName = "dev_cfd_lior";
+            _usersTable = "users";
+            _mongoDbConnection = "mongodb+srv://devuser1:5wTP4FRAT781rFp9@dev01-de-cwsxo.mongodb.net/dev_cfd_lior?retryWrites=true&w=majority";
+
+            return key;
+        }
+    }
+}

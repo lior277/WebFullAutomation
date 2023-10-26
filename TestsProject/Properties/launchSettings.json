@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TestsProject": {
+      "commandName": "Project",
+      "commandLineArgs": "$(MSBuildProjectName).dll --debug -- inprocess"
+    }
+  }
+}
