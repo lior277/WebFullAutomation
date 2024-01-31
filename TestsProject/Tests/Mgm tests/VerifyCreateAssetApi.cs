@@ -3,13 +3,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using AirSoftAutomationFramework.Internals.DAL.ConfigurationManagement;
-using AirSoftAutomationFramework.Internals.Factory;
+using AirSoftAutomationFramework.Internals.Factorys;
 using AirSoftAutomationFramework.Internals.Helpers;
-using AirSoftAutomationFramework.Internals.NunitAttributes;
-
+using AirSoftAutomationFramework.Internals.NunitAtributes;
+using AirSoftAutomationFramework.Models;
 using AirSoftAutomationFramework.Objects.DTOs;
 using AirSoftAutomationFramework.Objects.MgmObjects.Api;
-using ConsoleApp;
 using NUnit.Framework;
 using TestsProject.TestsInternals;
 

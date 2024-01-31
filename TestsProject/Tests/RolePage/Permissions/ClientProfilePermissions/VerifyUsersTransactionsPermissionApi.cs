@@ -4,16 +4,15 @@ using System;
 using System.Linq;
 using System.Threading;
 using AirSoftAutomationFramework.Internals.DAL.ConfigurationManagement;
-using AirSoftAutomationFramework.Internals.Factory;
+using AirSoftAutomationFramework.Internals.Factorys;
 using AirSoftAutomationFramework.Internals.Helpers;
-using AirSoftAutomationFramework.Internals.NunitAttributes;
-
+using AirSoftAutomationFramework.Internals.NunitAtributes;
+using AirSoftAutomationFramework.Models;
 using AirSoftAutomationFramework.Objects.DTOs;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.AccountsApi.Roles;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.AccountsApi.UsersMenuApi.UserMenuApi;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.Clients.ClientCard.FinancesTab;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.Clients.ClientPage;
-using ConsoleApp;
 using NUnit.Framework;
 using TestsProject.TestsInternals;
 

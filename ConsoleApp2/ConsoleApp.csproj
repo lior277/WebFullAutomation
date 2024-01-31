@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AirSoftAutomationFramework\AirSoftAutomationFramework.csproj" />
+    <ProjectReference Include="..\WebFullAutomation\WebFullAutomation.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,17 +1,16 @@
 ﻿// Ignore Spelling: Api
 
 using AirSoftAutomationFramework.Internals.DAL.ConfigurationManagement;
-using AirSoftAutomationFramework.Internals.Factory;
+using AirSoftAutomationFramework.Internals.Factorys;
 using AirSoftAutomationFramework.Internals.Helpers;
-using AirSoftAutomationFramework.Internals.NunitAttributes;
-
+using AirSoftAutomationFramework.Internals.NunitAtributes;
+using AirSoftAutomationFramework.Models;
 using AirSoftAutomationFramework.Objects.DTOs;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.Clients.ClientCard.FinancesTab;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.Clients.ClientPage;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.Settings;
 using AirSoftAutomationFramework.Objects.ForexObjects.ApiGeneral.Login;
 using AirSoftAutomationFramework.Objects.ForexObjects.TradingPlatform.TradeObjects.TradeApi;
-using ConsoleApp;
 using NUnit.Framework;
 using TestsProject.TestsInternals;
 

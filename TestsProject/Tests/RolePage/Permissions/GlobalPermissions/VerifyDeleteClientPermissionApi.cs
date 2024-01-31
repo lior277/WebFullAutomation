@@ -1,14 +1,14 @@
 ﻿// Ignore Spelling: Api
 
 using AirSoftAutomationFramework.Internals.DAL.ConfigurationManagement;
-using AirSoftAutomationFramework.Internals.Factory;
 using AirSoftAutomationFramework.Internals.Helpers;
-using AirSoftAutomationFramework.Internals.NunitAttributes;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.AccountsApi.Roles;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.AccountsApi.UsersMenuApi.UserMenuApi;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.Clients.ClientPage;
 using NUnit.Framework;
 using System;
+using AirSoftAutomationFramework.Internals.Factorys;
+using AirSoftAutomationFramework.Internals.NunitAtributes;
 using TestsProject.TestsInternals;
 
 namespace TestsProject.Tests.RolePage.Permissions.GlobalPermissions

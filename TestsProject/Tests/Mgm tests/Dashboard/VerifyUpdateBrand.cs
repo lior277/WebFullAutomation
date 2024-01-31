@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using AirSoftAutomationFramework.Internals.DAL.ConfigurationManagement;
-using AirSoftAutomationFramework.Internals.Factory;
+using AirSoftAutomationFramework.Internals.Factorys;
 using AirSoftAutomationFramework.Internals.Helpers;
 
 using AirSoftAutomationFramework.Objects.DTOs;

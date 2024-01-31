@@ -1,8 +1,6 @@
 ﻿using AirSoftAutomationFramework.Internals.DAL.ConfigurationManagement;
 using AirSoftAutomationFramework.Internals.ExtensionsMethods;
-using AirSoftAutomationFramework.Internals.Factory;
 using AirSoftAutomationFramework.Internals.Helpers;
-using AirSoftAutomationFramework.Internals.NunitAttributes;
 using AirSoftAutomationFramework.Objects.DTOs;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.AccountsApi.UsersMenuApi.UserMenuApi;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.Clients.ClientPage;
@@ -18,6 +16,8 @@ using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AirSoftAutomationFramework.Internals.Factorys;
+using AirSoftAutomationFramework.Internals.NunitAtributes;
 using TestsProject.TestsInternals;
 using static AirSoftAutomationFramework.Objects.DTOs.GetUserTimeLine;
 

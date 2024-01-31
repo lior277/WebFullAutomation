@@ -1,6 +1,4 @@
-﻿using AirSoftAutomationFramework.Internals.DAL.ApiAccess;
-using AirSoftAutomationFramework.Internals.DAL.ConfigurationManagement;
-using AirSoftAutomationFramework.Internals.Factory;
+﻿using AirSoftAutomationFramework.Internals.DAL.ConfigurationManagement;
 using AirSoftAutomationFramework.Internals.Helpers;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.AccountsApi.Roles;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.AccountsApi.UsersMenuApi.UserMenuApi;
@@ -13,6 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using AirSoftAutomationFramework.Internals.DAL.ApiAccsess;
+using AirSoftAutomationFramework.Internals.Factorys;
 using TestsProject.TestsInternals;
 using static AirSoftAutomationFramework.Objects.DTOs.CreateOfficeRequest;
 using Process = System.Diagnostics.Process;

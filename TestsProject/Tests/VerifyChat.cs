@@ -2,12 +2,13 @@
 using AirSoftAutomationFramework.Internals.ExtensionsMethods;
 
 using AirSoftAutomationFramework.Internals.Helpers;
-using AirSoftAutomationFramework.Internals.NunitAttributes;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using AirSoftAutomationFramework.Internals.Factorys;
+using AirSoftAutomationFramework.Internals.NunitAtributes;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.AccountsApi.Roles;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.Clients.ClientPage;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.Settings;
@@ -19,7 +20,6 @@ using AirSoftAutomationFramework.Objects.ForexObjects.Ui.UiGeneral;
 using TestsProject.TestsInternals;
 using static AirSoftAutomationFramework.Internals.Enums.EnumFactory;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.AccountsApi.UsersMenuApi.UserMenuApi;
-using AirSoftAutomationFramework.Internals.Factory;
 
 namespace TestsProject.Tests
 {

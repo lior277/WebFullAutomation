@@ -1,8 +1,6 @@
 ﻿using AirSoftAutomationFramework.Internals.DAL.ConfigurationManagement;
 
 using AirSoftAutomationFramework.Internals.Helpers;
-using AirSoftAutomationFramework.Internals.NunitAttributes;
-
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
@@ -21,8 +19,9 @@ using TestsProject.TestsInternals;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.AccountsApi.UsersMenuApi.UserMenuApi;
 using AirSoftAutomationFramework.Objects.ForexObjects.ApiGeneral.Login;
 using System.Threading;
-using ConsoleApp;
-using AirSoftAutomationFramework.Internals.Factory;
+using AirSoftAutomationFramework.Internals.Factorys;
+using AirSoftAutomationFramework.Internals.NunitAtributes;
+using AirSoftAutomationFramework.Models;
 
 namespace TestsProject.Tests
 {

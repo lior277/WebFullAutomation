@@ -2,14 +2,14 @@
 
 
 using AirSoftAutomationFramework.Internals.Helpers;
-using AirSoftAutomationFramework.Internals.NunitAttributes;
 using NUnit.Framework;
 using AirSoftAutomationFramework.Internals.DAL.ConfigurationManagement;
+using AirSoftAutomationFramework.Internals.Factorys;
+using AirSoftAutomationFramework.Internals.NunitAtributes;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.Settings;
 using TestsProject.TestsInternals;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.AccountsApi.UsersMenuApi;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.AccountsApi.UsersMenuApi.UserMenuApi;
-using AirSoftAutomationFramework.Internals.Factory;
 
 namespace TestsProject.Tests
 {

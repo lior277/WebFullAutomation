@@ -3,12 +3,13 @@
 using AirSoftAutomationFramework.Internals.DAL.ConfigurationManagement;
 
 using AirSoftAutomationFramework.Internals.Helpers;
-using AirSoftAutomationFramework.Internals.NunitAttributes;
-
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AirSoftAutomationFramework.Internals.Factorys;
+using AirSoftAutomationFramework.Internals.NunitAtributes;
+using AirSoftAutomationFramework.Models;
 using AirSoftAutomationFramework.Objects.DTOs;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.Banking;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.Clients.ClientCard.FinancesTab;
@@ -20,8 +21,6 @@ using TestsProject.TestsInternals;
 using static AirSoftAutomationFramework.Objects.DTOs.TestCase;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.AccountsApi.UsersMenuApi.UserMenuApi;
 using AirSoftAutomationFramework.Objects.ForexObjects.ApiGeneral.Login;
-using ConsoleApp;
-using AirSoftAutomationFramework.Internals.Factory;
 
 namespace TestsProject.Tests
 {

@@ -1,6 +1,5 @@
 ﻿
 using AirSoftAutomationFramework.Internals.Helpers;
-using AirSoftAutomationFramework.Internals.NunitAttributes;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System.Collections.Generic;
@@ -15,7 +14,8 @@ using AirSoftAutomationFramework.Objects.ForexObjects.Ui.Login;
 using TestsProject.TestsInternals;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.AccountsApi.UsersMenuApi.UserMenuApi;
 using AirSoftAutomationFramework.Internals.ExtensionsMethods;
-using AirSoftAutomationFramework.Internals.Factory;
+using AirSoftAutomationFramework.Internals.Factorys;
+using AirSoftAutomationFramework.Internals.NunitAtributes;
 using AirSoftAutomationFramework.Objects.ForexObjects.Ui.UiGeneral;
 using Microsoft.Graph.Models;
 

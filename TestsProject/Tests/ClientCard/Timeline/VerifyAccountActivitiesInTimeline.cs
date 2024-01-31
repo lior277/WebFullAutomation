@@ -2,9 +2,7 @@
 
 using AirSoftAutomationFramework.Internals.DAL.ConfigurationManagement;
 using AirSoftAutomationFramework.Internals.ExtensionsMethods;
-using AirSoftAutomationFramework.Internals.Factory;
 using AirSoftAutomationFramework.Internals.Helpers;
-using AirSoftAutomationFramework.Internals.NunitAttributes;
 using AirSoftAutomationFramework.Objects.DTOs;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.AccountsApi.UsersMenuApi.UserMenuApi;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.Banking;
@@ -22,12 +20,14 @@ using AirSoftAutomationFramework.Objects.ForexObjects.Ui.Crm.ClientsPage;
 using AirSoftAutomationFramework.Objects.ForexObjects.Ui.Crm.ClientsPage.ClientCard;
 using AirSoftAutomationFramework.Objects.ForexObjects.Ui.Login;
 using AirSoftAutomationFramework.Objects.ForexObjects.Ui.UiGeneral;
-using ConsoleApp;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AirSoftAutomationFramework.Internals.Factorys;
+using AirSoftAutomationFramework.Internals.NunitAtributes;
+using AirSoftAutomationFramework.Models;
 using TestsProject.TestsInternals;
 using static AirSoftAutomationFramework.Objects.DTOs.TestCase;
 

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using AirSoftAutomationFramework.Internals.DAL.ConfigurationManagement;
 using AirSoftAutomationFramework.Internals.ExtensionsMethods;
-using AirSoftAutomationFramework.Internals.Factory;
+using AirSoftAutomationFramework.Internals.Factorys;
 using AirSoftAutomationFramework.Internals.Helpers;
-using AirSoftAutomationFramework.Internals.NunitAttributes;
-
+using AirSoftAutomationFramework.Internals.NunitAtributes;
+using AirSoftAutomationFramework.Models;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.AccountsApi.Roles;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.AccountsApi.UsersMenuApi.UserMenuApi;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.Clients.ClientCard.FinancesTab;
@@ -16,7 +16,6 @@ using AirSoftAutomationFramework.Objects.ForexObjects.TradingPlatform.TradeObjec
 using AirSoftAutomationFramework.Objects.ForexObjects.Ui.Cfd;
 using AirSoftAutomationFramework.Objects.ForexObjects.Ui.Login;
 using AirSoftAutomationFramework.Objects.ForexObjects.Ui.UiGeneral;
-using ConsoleApp;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using OpenQA.Selenium;

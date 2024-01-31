@@ -3,13 +3,13 @@
 using AirSoftAutomationFramework.Internals.DAL.ConfigurationManagement;
 
 using AirSoftAutomationFramework.Internals.Helpers;
-using AirSoftAutomationFramework.Internals.NunitAttributes;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
+using AirSoftAutomationFramework.Internals.Factorys;
+using AirSoftAutomationFramework.Internals.NunitAtributes;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.Settings;
 using TestsProject.TestsInternals;
-using AirSoftAutomationFramework.Internals.Factory;
 
 namespace TestsProject.Tests
 {

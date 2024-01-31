@@ -1,14 +1,14 @@
 ﻿using AirSoftAutomationFramework.Internals.DAL.ConfigurationManagement;
 
 using AirSoftAutomationFramework.Internals.Helpers;
-using AirSoftAutomationFramework.Internals.NunitAttributes;
 using NUnit.Framework;
 using System.Linq;
 using TestsProject.TestsInternals;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Trade;
-using AirSoftAutomationFramework.Internals.Factory;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.AccountsApi.UsersMenuApi.UserMenuApi;
 using System.Collections.Generic;
+using AirSoftAutomationFramework.Internals.Factorys;
+using AirSoftAutomationFramework.Internals.NunitAtributes;
 using AirSoftAutomationFramework.Objects.DTOs;
 
 namespace TestsProject.Tests.Trade

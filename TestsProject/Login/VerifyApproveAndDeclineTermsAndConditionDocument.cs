@@ -1,9 +1,7 @@
 ﻿// Ignore Spelling: api TimeLine crm
 
 using AirSoftAutomationFramework.Internals.DAL.ConfigurationManagement;
-using AirSoftAutomationFramework.Internals.Factory;
 using AirSoftAutomationFramework.Internals.Helpers;
-using AirSoftAutomationFramework.Internals.NunitAttributes;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.Clients.ClientCard;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.Clients.ClientPage;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.Settings;
@@ -15,6 +13,8 @@ using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AirSoftAutomationFramework.Internals.Factorys;
+using AirSoftAutomationFramework.Internals.NunitAtributes;
 using TestsProject.TestsInternals;
 
 namespace TestsProject.Login

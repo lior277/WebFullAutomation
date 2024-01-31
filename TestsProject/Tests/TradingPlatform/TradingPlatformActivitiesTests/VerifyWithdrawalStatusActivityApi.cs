@@ -5,10 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using AirSoftAutomationFramework.Internals.DAL.ConfigurationManagement;
 using AirSoftAutomationFramework.Internals.ExtensionsMethods;
-using AirSoftAutomationFramework.Internals.Factory;
+using AirSoftAutomationFramework.Internals.Factorys;
 using AirSoftAutomationFramework.Internals.Helpers;
-using AirSoftAutomationFramework.Internals.NunitAttributes;
-
+using AirSoftAutomationFramework.Internals.NunitAtributes;
+using AirSoftAutomationFramework.Models;
 using AirSoftAutomationFramework.Objects.DTOs;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.AccountsApi.Roles;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.AccountsApi.UsersMenuApi.UserMenuApi;
@@ -17,7 +17,6 @@ using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.Clients.ClientPage
 using AirSoftAutomationFramework.Objects.ForexObjects.ApiGeneral.Login;
 using AirSoftAutomationFramework.Objects.ForexObjects.TradingPlatform.TradeObjects.TradeApi;
 using AirSoftAutomationFramework.Objects.ForexObjects.TradingPlatform.TradeObjects.TradeApi.Settings;
-using ConsoleApp;
 using NUnit.Framework;
 using TestsProject.TestsInternals;
 

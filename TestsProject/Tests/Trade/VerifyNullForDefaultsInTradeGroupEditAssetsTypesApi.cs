@@ -3,7 +3,6 @@
 using AirSoftAutomationFramework.Internals.DAL.ConfigurationManagement;
 
 using AirSoftAutomationFramework.Internals.Helpers;
-using AirSoftAutomationFramework.Internals.NunitAttributes;
 using NUnit.Framework;
 using TestsProject.TestsInternals;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Trade;
@@ -18,7 +17,8 @@ using System.Linq;
 using AirSoftAutomationFramework.Internals.ExtensionsMethods;
 using AirSoftAutomationFramework.Objects.ForexObjects.Api.Crm.AccountsApi.UsersMenuApi.UserMenuApi;
 using System;
-using AirSoftAutomationFramework.Internals.Factory;
+using AirSoftAutomationFramework.Internals.Factorys;
+using AirSoftAutomationFramework.Internals.NunitAtributes;
 
 namespace TestsProject.Tests.Trade
 {
