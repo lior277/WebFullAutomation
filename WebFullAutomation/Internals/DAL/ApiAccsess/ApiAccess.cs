@@ -7,10 +7,11 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using AirSoftAutomationFramework.Internals.DAL.ApiAccsess;
 using AirSoftAutomationFramework.Objects.DTOs;
 using Newtonsoft.Json;
 
-namespace AirSoftAutomationFramework.Internals.DAL.ApiAccsess
+namespace WebFullAutomation.Internals.DAL.ApiAccsess
 {
     public class ApiAccess : IApiAccess
     {

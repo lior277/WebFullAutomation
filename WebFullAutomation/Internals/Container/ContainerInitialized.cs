@@ -45,6 +45,7 @@ using AirSoftAutomationFramework.Objects.MgmObjects.Api.Risk.AssetsCfd;
 using AirSoftAutomationFramework.Objects.MgmObjects.Ui.Dashboard;
 using Autofac;
 using OpenQA.Selenium;
+using WebFullAutomation.Internals.DAL.ApiAccsess;
 
 namespace WebFullAutomation.Internals.Container
 {

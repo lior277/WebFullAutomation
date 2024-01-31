@@ -14,6 +14,7 @@ using System.Linq;
 using AirSoftAutomationFramework.Internals.DAL.ApiAccsess;
 using AirSoftAutomationFramework.Internals.Factorys;
 using TestsProject.TestsInternals;
+using WebFullAutomation.Internals.DAL.ApiAccsess;
 using static AirSoftAutomationFramework.Objects.DTOs.CreateOfficeRequest;
 using Process = System.Diagnostics.Process;
 
