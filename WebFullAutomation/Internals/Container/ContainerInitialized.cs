@@ -490,6 +490,37 @@ namespace WebFullAutomation.Internals.Container
             builder.RegisterType<MgmDashboardUi>().As<IMgmDashboardUi>()
                .WithParameters(new[] { new TypedParameter(typeof(IWebDriver), driver) });
             #endregion
+            
+            #region Register Kafka
+
+            // add kafka
+            services.AddKafka(
+                kafka => kafka
+                    .UseConsoleLog()
+                    .AddCluster(
+                        cluster => cluster
+                            .WithBrokers(Configs.BootstrapServers.Split(";"))
+                            .WithSecurityInformation(ha => ha.SecurityProtocol = SecurityProtocol.Ssl)
+                            .AddConsumer(consumer =>
+                            {
+                                consumer
+                                    .Topic(Configs.TopicConsumer)
+                                    .WithAutoOffsetReset(AutoOffsetReset.Latest)
+                                    .WithGroupId(Configs.GroupId)
+                                    .WithWorkersCount(10)
+                                    .WithBufferSize(10)
+                                    .AddMiddlewares(middlewares => middlewares
+                                        .AddSingleTypeDeserializer<ProviderEventDto, KafkaFlowUtf8JsonSerializer>()
+                                        .AddTypedHandlers(handler => handler
+                                            .AddHandler<KafkaMessageHandler>()));
+                            })
+                            .AddProducer<KafkaFlowProducer>(producer => producer
+                                .DefaultTopic(Configs.TopicProducer)
+                                .AddMiddlewares(middlewares => middlewares
+                                    .AddSerializer<JsonCoreSerializer>()
+                                ))));
+
+            #endregion
 
             var container = builder.Build();
 
