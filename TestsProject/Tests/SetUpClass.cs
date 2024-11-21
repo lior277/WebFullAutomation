@@ -13,6 +13,7 @@ using System.Diagnostics;
 using System.Linq;
 using AirSoftAutomationFramework.Internals.DAL.ApiAccsess;
 using AirSoftAutomationFramework.Internals.Factorys;
+using MetaversAutomation.Internals.DAL.KafkaAccess;
 using TestsProject.TestsInternals;
 using WebFullAutomation.Internals.DAL.ApiAccsess;
 using static AirSoftAutomationFramework.Objects.DTOs.CreateOfficeRequest;
@@ -311,6 +312,23 @@ public class MySetUpClass : TestSuitBase
     {
         try
         {
+            #region kafka
+            
+            // stop the consumer
+            await ApplicationFactory
+                .ChangeContext<IKafkaFlowConsumer>()
+                .StopConsuming();
+
+            // delete the consumer
+            await ApplicationFactory
+                .ChangeContext<IKafkaFlowConsumer>()
+                .DeleteConsumerGroup();
+
+            // start consuming
+            await ApplicationFactory
+                .ChangeContext<IKafkaFlowConsumer>()
+                .StartConsuming();
+            #endregion
             //Console.WriteLine("Run After All Tests");
 
             // enter the Email For Export in Super Admin Tub
