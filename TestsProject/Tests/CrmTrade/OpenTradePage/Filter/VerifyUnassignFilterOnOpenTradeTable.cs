@@ -110,7 +110,7 @@ namespace TestsProject.Tests.CrmTrade.OpenTradePage.Filter
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyUnassignFilterOnOpenTradeTableTest()
         {
             _apiFactory

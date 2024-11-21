@@ -89,7 +89,7 @@ namespace TestsProject.Tests.RolePage.Permissions.SettingPermissions
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifySecurityTabPermissionApiTest()
         {
             var securityTabSectionNames = new List<string> { "config/login", "config/recaptcha",

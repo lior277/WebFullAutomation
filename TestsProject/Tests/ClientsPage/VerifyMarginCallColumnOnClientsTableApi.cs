@@ -157,7 +157,7 @@ namespace TestsProject.Tests.ClientsPage
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyMarginCallColumnOnClientsTableApiTest()
         {
             var expectedMarginCallNotifiedDate = DateTime.Now.ToString("yyyy-MM-dd");

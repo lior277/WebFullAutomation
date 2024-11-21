@@ -158,7 +158,7 @@ namespace TestsProject.Tests.TradingPlatform.TradingPlatformActivitiesTests
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.TestCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyExportActivitiesApiTest()
         {
             // expected export saving account 

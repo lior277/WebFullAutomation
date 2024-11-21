@@ -105,7 +105,7 @@ namespace TestsProject.Tests.CrmTrade.OpenTradePage
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyOpenTradeTableTest()
         {
             var clientName = _clientEmail.Split("@")[0].UpperCaseFirstLetter();

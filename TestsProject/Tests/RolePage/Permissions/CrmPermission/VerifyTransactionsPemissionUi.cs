@@ -113,7 +113,7 @@ namespace TestsProject.Tests.RolePage.Permissions.CrmPermission
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyTransactionsPermissionUiTest()
         {
             var expectedError = "AIRSOFT Error 404 something's" +

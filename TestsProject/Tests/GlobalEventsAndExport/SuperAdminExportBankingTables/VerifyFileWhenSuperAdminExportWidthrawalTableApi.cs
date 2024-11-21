@@ -138,7 +138,7 @@ namespace TestsProject.Tests.GlobalEventsAndExport.SuperAdminExportBankingTables
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyFileWhenSuperAdminExportWidthrawalTableApiTest()
         {                    
             var expectedDateOfDeposit = DateTime.Now.ToString("dd/MM/yyyy");

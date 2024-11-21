@@ -70,7 +70,7 @@ namespace TestsProject.Tests.ClientCard
         [Description("based on jira https://airsoftltd.atlassian.net/browse/AIRV2-4581")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyGeneralDodPendingAfterUploadApiTest()
         {
             var expectedGeneralDodStatus = "Pending";

@@ -91,7 +91,7 @@ namespace TestsProject.Tests.GlobalEventsAndExport.GlobalEvents.SavingAccount
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyGlobalEventForCreateEditDeleteSaleStatus2ApiTest()
         {
             var expectedTypeList = new List<string>()

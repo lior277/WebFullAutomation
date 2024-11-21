@@ -93,7 +93,7 @@ namespace TestsProject.Tests.CampaignPage.Dashboard
         [Test]     
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyActiveCampaignCanBeCreatedTest()
         {
             var date = DateTime.Now.ToString("dd/MM/yyyy");

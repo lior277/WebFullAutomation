@@ -62,7 +62,7 @@ namespace TestsProject.Tests.CrmTrade.BulkTradingPage
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyOpenBulkTradeWhenNotEnoughMoneyMessageApiTest()
         {
             var expectedNotEnoughMoneyError = "not enough money";

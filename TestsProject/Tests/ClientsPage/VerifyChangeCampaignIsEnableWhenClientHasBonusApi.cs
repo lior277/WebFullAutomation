@@ -103,7 +103,7 @@ namespace TestsProject.Tests.ClientsPage
         [Description("based on jira https://airsoftltd.atlassian.net/browse/AIRV2-4769")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyChangeCampaignIsEnableWhenClientHasBonusApiTest()
         {
             var expectedCampaignName = _secondCampaignName;

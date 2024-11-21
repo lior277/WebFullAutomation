@@ -76,7 +76,7 @@ namespace TestsProject.Tests.ClientsPage.Filters
         [Description("Based on https://airsoftltd.atlassian.net/browse/AIRV2-5329")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyHideAndUnHideFilterOnClientsPageTest()
         {
             var hiddeFilterName = "Sales agents";

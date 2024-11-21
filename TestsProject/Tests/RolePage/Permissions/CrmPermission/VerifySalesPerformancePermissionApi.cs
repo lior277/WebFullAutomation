@@ -87,7 +87,7 @@ namespace TestsProject.Tests.RolePage.Permissions.CrmPermission
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifySalesPerformancePermissionApiTest()
         {
             var expectedErrorMessage = "Method Not Allowed";

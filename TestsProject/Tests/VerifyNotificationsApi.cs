@@ -537,7 +537,7 @@ namespace TestsProject.Tests
         [Category(DataRep.ApiDocCategory)] // apidoc add comment
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyNotificationsApiTest()
         {
             var expectedNotificationsTyps = new List<string>() {

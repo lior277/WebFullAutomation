@@ -61,7 +61,7 @@ namespace TestsProject.Tests.Mgm_tests
 
         [Test]
         [Category(DataRep.MgmSanityCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyQAndATest()
         {
             var expectedAnswer = "answer";

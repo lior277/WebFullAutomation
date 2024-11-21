@@ -84,7 +84,7 @@ namespace TestsProject.Tests.ClientsPage.Filters
         [Description("https://airsoftltd.atlassian.net/browse/AIRV2-4806")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifySaveLoadDeleteFilterOnClientsPageApiTest()
         {
             var firstFilterName = $"{_clientName}FirstFilter";

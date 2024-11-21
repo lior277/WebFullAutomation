@@ -114,7 +114,7 @@ namespace TestsProject.Tests.CrmTrade.CloseTradePage
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyCloseTradesTableTest()
         {
             var clientName = _clientEmail.Split("@").First().UpperCaseFirstLetter();

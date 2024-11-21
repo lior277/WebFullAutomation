@@ -139,7 +139,7 @@ namespace TestsProject.Tests.Emails
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyPendingOrderActivatedEmailApiTest()
         {
             var subject = "ies has been activated";

@@ -82,7 +82,7 @@ namespace TestsProject.Tests.Settings.GeneralTab
         [Description("Based on https://airsoftltd.atlassian.net/browse/AIRV2-5180")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyShowAvailableToWithdrawalPermissionApiTest()
         {
             var expectedError = "Method Not Allowed";

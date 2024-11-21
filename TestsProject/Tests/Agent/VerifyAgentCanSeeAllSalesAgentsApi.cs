@@ -58,7 +58,7 @@ namespace TestsProject.Tests.Agent
         [Category(DataRep.ApiDocCategory)]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyAgentCanSeeAllSalesAgentsApiTest()
         {
             var salesAgent = _apiFactory

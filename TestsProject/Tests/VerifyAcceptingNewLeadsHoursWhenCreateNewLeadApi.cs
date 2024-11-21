@@ -64,7 +64,7 @@ namespace TestsProject.Tests
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyAcceptingNewLeadsHoursWhenCreateNewLeadApiTest()
         {
             var expectedNewLeadBlockMessage = "registration is open between 12:00 and 12:00GMT +0";

@@ -113,7 +113,7 @@ namespace TestsProject.Tests.ClientsPage.AttributionRoles
         [Category(DataRep.ApiDocCategory)]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyRetentionTypeAtFirstDepositOnCampaignAttributionRoleApiTest()
         {
             // create client with campaign

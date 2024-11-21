@@ -177,7 +177,7 @@ namespace TestsProject.Tests.Dialer
         [Category(DataRep.ApiDocCategory)]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyDialerSeeAllCampaignsAndAllSalesAgentsApiTest()
         {
             var dialerSeeCampaignsBelongToHim = _apiFactory

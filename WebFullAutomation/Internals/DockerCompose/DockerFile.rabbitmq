@@ -1,0 +1,23 @@
+# Base RabbitMQ 3.9 Management Image
+FROM rabbitmq:3.9-management
+
+# Set environment variables to prevent interactive prompts during package installation
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install required tools and clean up
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends curl bash \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy the initialization script
+COPY ./Scripts/init_rabbitmq.sh /docker-entrypoint-initdb.d/init_rabbitmq.sh
+
+# Ensure the script is executable
+RUN chmod +x /docker-entrypoint-initdb.d/init_rabbitmq.sh
+
+# Set default RabbitMQ environment variables
+ENV RABBITMQ_DEFAULT_USER=admin
+ENV RABBITMQ_DEFAULT_PASS=admin
+
+# Modify the entrypoint to run the script
+CMD ["sh", "-c", "/usr/local/bin/docker-entrypoint.sh rabbitmq-server & sleep 10 && /docker-entrypoint-initdb.d/init_rabbitmq.sh && wait"]

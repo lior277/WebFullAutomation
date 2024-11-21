@@ -68,7 +68,7 @@ namespace TestsProject.Tests.ClientCard
         [Description("based on jira: https://airsoftltd.atlassian.net/browse/AIRV2-4292")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyDepositWithEthCurrencyApiTest()
         {
             var depositAmount = 10;

@@ -109,7 +109,7 @@ namespace TestsProject.Tests.SignDod
         [Description("based on jira https://airsoftltd.atlassian.net/browse/AIRV2-4149")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifySignDodOnPlatformWithBankTransferTest()
         {
             var depositAmount = 10;

@@ -52,7 +52,7 @@ namespace TestsProject.Tests.Emails
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyApiDocsLinkEmailApiTest()
         {
             var subject = "API Docs";

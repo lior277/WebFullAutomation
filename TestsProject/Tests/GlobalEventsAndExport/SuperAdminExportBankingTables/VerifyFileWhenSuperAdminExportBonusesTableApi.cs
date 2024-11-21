@@ -110,7 +110,7 @@ namespace TestsProject.Tests.GlobalEventsAndExport.SuperAdminExportBankingTables
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyFileWhenSuperAdminExportBonusesTableApiTest()
         {                    
             var expectedDateOfBonus = DateTime.Now.ToString("dd/MM/yyyy");

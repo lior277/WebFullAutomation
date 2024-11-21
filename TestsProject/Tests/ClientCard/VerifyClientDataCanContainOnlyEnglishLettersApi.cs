@@ -110,7 +110,7 @@ namespace TestsProject.Tests.ClientCard
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyClientDataCanContainOnlyEnglishLettersApiTest()
         {
             var expectedIllegalCommentResponse = "Comment can start only with english letters";

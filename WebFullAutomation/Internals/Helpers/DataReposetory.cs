@@ -169,7 +169,7 @@ namespace AirSoftAutomationFramework.Internals.Helpers
         public static string PspTable = "psp";
         public static List<string> EmailListForExport = new List<string>();
         public static List<string> EmailListForAdminDeposit = new List<string>();
-        public const int NumOfRetraiesForFallingTest = 2;
+        public const int NumOfRetriesForFallingTest = 2;
         public const string AssetName = "ETHUSD";
         public const string DefaultUSDCurrencyName = "USD";
         public const string Platform = "cfd";

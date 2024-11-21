@@ -71,7 +71,7 @@ namespace TestsProject.Tests.TradingPlatform
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyCreateTradeTest()
         {
             var date = DateTime.Now.ToString("yyyy-MM-dd");

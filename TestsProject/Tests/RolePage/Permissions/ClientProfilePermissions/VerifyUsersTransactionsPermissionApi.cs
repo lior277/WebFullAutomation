@@ -160,7 +160,7 @@ namespace TestsProject.Tests.RolePage.Permissions.ClientProfilePermissions
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyUsersTransactionsPermissionApiTest()
         {
             var expectedErrorMessage = "Method Not Allowed";

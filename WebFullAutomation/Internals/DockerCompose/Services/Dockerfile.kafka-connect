@@ -1,0 +1,18 @@
+# https://docs.confluent.io/platform/current/installation/docker/development.html#extending-images
+
+ARG KAFKA_VERSION=7.4.4
+
+FROM confluentinc/cp-kafka-connect:${KAFKA_VERSION} as base
+
+
+FROM base
+USER root
+RUN yum install -y jq bash curl vim
+
+USER appuser
+ARG KAFKA_CONNECT_JDBC_VERSION=10.7.6
+ARG KAFKA_CONNECT_DEBEZIUM_MYSQL_VERSION=2.4.2
+ARG KAFKA_CONNECT_DEBEZIUM_POSTGRESQL_VERSION=2.5.3
+RUN confluent-hub install --no-prompt confluentinc/kafka-connect-jdbc:${KAFKA_CONNECT_JDBC_VERSION} && \
+    confluent-hub install --no-prompt debezium/debezium-connector-mysql:${KAFKA_CONNECT_DEBEZIUM_MYSQL_VERSION} && \
+    confluent-hub install --no-prompt debezium/debezium-connector-postgresql:${KAFKA_CONNECT_DEBEZIUM_POSTGRESQL_VERSION}

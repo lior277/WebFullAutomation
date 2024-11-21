@@ -67,7 +67,7 @@ namespace TestsProject.Tests.Settings.GeneralTab
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyStatusNewCanNotBeDeletedTest()
         {
             var expectedNumOfButtonsOfLeadsStatusForNew = 1;

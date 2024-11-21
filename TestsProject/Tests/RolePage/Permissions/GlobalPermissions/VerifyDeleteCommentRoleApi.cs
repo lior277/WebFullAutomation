@@ -113,7 +113,7 @@ namespace TestsProject.Tests.RolePage.Permissions.GlobalPermissions
         [Description("based on jira: https://airsoftltd.atlassian.net/browse/AIRV2-4745")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyDeleteCommentRoleApiTest()
         {
             // Get Deleted Comments By Client Id for no permission

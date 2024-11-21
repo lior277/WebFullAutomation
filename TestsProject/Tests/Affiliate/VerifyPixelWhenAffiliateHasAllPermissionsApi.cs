@@ -121,7 +121,7 @@ namespace TestsProject.Tests.Affiliate
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyPixelWhenAffiliateHasAllPermmisionsApiTest()
         {
             var expectedPhone = DataRep.UserDefaultPhone;

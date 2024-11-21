@@ -543,7 +543,7 @@ namespace TestsProject.Tests.RolePage.Notifications
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyNotificationsPermissionsApiTest()
         {          
             var actualNotificationsTyps = _apiFactory

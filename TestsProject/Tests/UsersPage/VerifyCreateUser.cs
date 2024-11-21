@@ -69,7 +69,7 @@ namespace TestsProject.Tests.UsersPage
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyCreateUserTest()
         {
             var mailPerfix = DataRep.EmailPrefix;

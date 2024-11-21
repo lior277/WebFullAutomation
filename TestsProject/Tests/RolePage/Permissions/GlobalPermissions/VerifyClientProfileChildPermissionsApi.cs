@@ -134,7 +134,7 @@ namespace TestsProject.Tests.RolePage.Permissions.GlobalPermissions
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyClientProfileChildPermissionsApiTest()
         {
             var expectedErrorMessage = "Method Not Allowed";

@@ -148,7 +148,7 @@ namespace TestsProject.Tests.ClientCard
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyComplianceForBlockStatusApiTest()
         {
             var _dbContext = new QaAutomation01Context();

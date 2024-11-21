@@ -153,7 +153,7 @@ namespace TestsProject.Tests.GlobalEventsAndExport
         [Description("based on bug https://airsoftltd.atlassian.net/browse/AIRV2-4587")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyFileAndGlobalEventForExportRisksTableApiTest()
         {
             var expectedEffectedTable = _tableName;

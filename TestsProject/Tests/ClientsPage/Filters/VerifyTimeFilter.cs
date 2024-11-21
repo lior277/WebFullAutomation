@@ -97,7 +97,7 @@ namespace TestsProject.Tests.ClientsPage.Filters
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyTimeFilterTest()
         {
             var campaignName = _campaignData.Keys.First();

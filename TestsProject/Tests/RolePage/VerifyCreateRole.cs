@@ -80,7 +80,7 @@ namespace TestsProject.Tests.RolePage
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyCreateRoleTest()
         {
             var permissionName = "Create client ";

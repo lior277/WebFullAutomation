@@ -135,7 +135,7 @@ namespace TestsProject.Tests.ClientCard.TimeLine
         [Description("based on ticket: https://airsoftltd.atlassian.net/browse/AIRV2-5378")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyCommissionNotCalculatedForChronoTradeApiTest()
         {  
             var actualCommission = _apiFactory

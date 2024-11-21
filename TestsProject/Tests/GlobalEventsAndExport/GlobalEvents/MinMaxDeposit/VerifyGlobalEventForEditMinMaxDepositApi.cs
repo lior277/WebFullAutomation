@@ -73,7 +73,7 @@ namespace TestsProject.Tests.GlobalEventsAndExport.GlobalEvents
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyGlobalEventForEditMinMaxDepositApiTest()
         {
             var expectedType = "edit_min_max_deposits";

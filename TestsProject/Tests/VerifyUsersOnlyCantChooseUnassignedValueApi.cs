@@ -96,7 +96,7 @@ namespace TestsProject.Tests
         [Description("based on jira https://airsoftltd.atlassian.net/browse/AIRV2-5371")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyUsersOnlyCantChooseUnassignedValueApiTest()
         {
             // Assign Deposit to unassigned user

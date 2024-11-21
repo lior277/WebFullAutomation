@@ -132,7 +132,7 @@ namespace TestsProject.Tests.GlobalEventsAndExport.SuperAdminExportBankingTables
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyFileWhenSuperAdminExportChargebackTableApiTest()
         {
             var expectedDateOfChargeback = DateTime.Now.ToString("dd/MM/yyyy");

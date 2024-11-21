@@ -111,4 +111,13 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Internals\DockerCompose\.DS_Store" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Internals\DockerCompose\DockerCompose\Properties\kafka-cluster-cdc.properties\" />
+    <Folder Include="Internals\DockerCompose\DockerCompose\Properties\kafka-cluster-hermes.properties\" />
+  </ItemGroup>
 </Project>

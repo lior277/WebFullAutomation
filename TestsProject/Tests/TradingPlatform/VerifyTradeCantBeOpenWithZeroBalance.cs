@@ -76,7 +76,7 @@ namespace TestsProject.Tests.TradingPlatform
 
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyTradeCantBeOpenWithZeroBalanceTest()
         {
             var assetName = "ETH";

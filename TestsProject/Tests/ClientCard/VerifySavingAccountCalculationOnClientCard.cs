@@ -118,7 +118,7 @@ namespace TestsProject.Tests.ClientCard
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifySavingAccountCalculationOnClientCardTest()
         {
             var expectedSABalance = $"SA Balance: {_depositAmont}.00 $";

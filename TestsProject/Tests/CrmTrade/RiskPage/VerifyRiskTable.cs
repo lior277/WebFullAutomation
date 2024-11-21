@@ -111,7 +111,7 @@ namespace TestsProject.Tests.CrmTrade.RiskPage
         [Description("based on jira https://airsoftltd.atlassian.net/browse/AIRV2-4740")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyRiskTableTest()
         {
             var clientName = _clientEmail.Split("@").First().UpperCaseFirstLetter();

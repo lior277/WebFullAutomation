@@ -152,7 +152,7 @@ namespace TestsProject.Login
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyBlockUserAndClientWhenExceedLoginAttemptTest()
         {
             var expectedLoginErrorMessage = "The account is blocked." +

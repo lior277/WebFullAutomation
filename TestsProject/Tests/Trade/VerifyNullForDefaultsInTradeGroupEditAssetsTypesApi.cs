@@ -127,7 +127,7 @@ namespace TestsProject.Tests.Trade
         [Description("based on jira https://airsoftltd.atlassian.net/browse/AIRV2-5163")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyNullForDefaultsInTradeGroupEditAssetsTypesApiTest()
         {
             var expectedradeGroupForexValues = new List<string>();

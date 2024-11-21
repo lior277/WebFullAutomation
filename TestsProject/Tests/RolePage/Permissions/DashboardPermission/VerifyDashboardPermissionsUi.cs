@@ -103,7 +103,7 @@ namespace TestsProject.Tests.RolePage.Permissions.DashboardPermission
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyDashboardPermissionsUiTest()
         {          
             var expectedErrorMessage = "Method Not Allowed";

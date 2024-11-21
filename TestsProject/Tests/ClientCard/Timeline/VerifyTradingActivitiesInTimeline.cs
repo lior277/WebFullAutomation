@@ -592,7 +592,7 @@ namespace TestsProject.Tests.ClientCard.TimeLine
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyTradingActivitiesInTimelineTest()
         {
             #region Expected data

@@ -135,7 +135,7 @@ namespace TestsProject.Tests.Emails
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyTradeMarginCloseEmailApiTest()
         {
             var  closeReason = "trade margin close";

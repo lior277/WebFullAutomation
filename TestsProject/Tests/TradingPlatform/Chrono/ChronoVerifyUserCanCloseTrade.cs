@@ -80,7 +80,7 @@ namespace TestsProject.Tests.TradingPlatform.Chrono
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void ChronoVerifyUserCanCloseTradeTest()
         {
             var expectedAssetName = DataRep.AssetNameShort;

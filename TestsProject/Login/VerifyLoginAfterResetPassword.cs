@@ -133,7 +133,7 @@ namespace TestsProject.Login
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyLoginAfterResetPasswordTest()
         {
             var newPassword = DataRep.Password + "New";

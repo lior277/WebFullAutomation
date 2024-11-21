@@ -118,7 +118,7 @@ namespace TestsProject.Tests.Banking.DepositsPage
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyFirstTimeDepositInBankingTest()
         {
             var chooseCampaignName =  _campaignName;

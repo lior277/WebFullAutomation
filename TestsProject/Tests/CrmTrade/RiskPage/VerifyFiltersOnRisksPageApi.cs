@@ -155,7 +155,7 @@ namespace TestsProject.Tests.CrmTrade.RiskPage
         [Description("bug on main office")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyFiltersOnRisksPageApiTest()
         {
             // dont delete , wait for client to on line in redis

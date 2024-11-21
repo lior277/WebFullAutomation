@@ -63,7 +63,7 @@ namespace TestsProject.Tests.TradingPlatform
         [Description("based on jira 5074")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyRedirectUnknownUrlsToHomePageTest()
         {
             var expectedUrl = $"{_tradingPlatformUrl}/trade";

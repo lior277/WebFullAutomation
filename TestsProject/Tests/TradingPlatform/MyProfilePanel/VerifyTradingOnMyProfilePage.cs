@@ -184,7 +184,7 @@ namespace TestsProject.Tests.TradingPlatform.MyProfilePanel
         [Test]        
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyTradingOnMyProfilePageTest()
         {
             var expectedTotalTrades = "5";

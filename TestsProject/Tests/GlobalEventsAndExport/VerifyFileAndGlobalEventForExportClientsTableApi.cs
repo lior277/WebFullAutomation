@@ -194,7 +194,7 @@ namespace TestsProject.Tests.GlobalEventsAndExport
         [Description("BUG SUB CAMPAIGN")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyFileAndGlobalEventForExportClientsTableApiTest()
         {
             var expectedEffectedTable = _tableName;

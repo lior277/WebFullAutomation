@@ -84,7 +84,7 @@ namespace TestsProject.Tests
         [Category(DataRep.ApiDocCategory)]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyFirstTimeDepositInApiTest()
         {
             var clientRegistrationDitails = _apiFactory

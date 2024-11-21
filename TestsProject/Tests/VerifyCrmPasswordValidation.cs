@@ -75,7 +75,7 @@ namespace TestsProject.Tests
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyCrmPasswordValidationTest()
         {
             var passwordOptions = new List<string>() { "passwor",

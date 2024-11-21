@@ -165,7 +165,7 @@ namespace TestsProject.Tests.TradingPlatform
         [Description("based on jira https://airsoftltd.atlassian.net/browse/AIRV2-4672")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyBlockTradeAndEmailsWhenPnlChangesApiTest()
         {
             var expectedSuspiciosSubject = "Suspicious Profit Of Clients On airsoftltd.com";         

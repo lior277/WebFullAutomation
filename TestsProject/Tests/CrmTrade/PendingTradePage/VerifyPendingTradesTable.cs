@@ -116,7 +116,7 @@ namespace TestsProject.Tests.CrmTrade.PendingTradePage
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyPendingTradesTableTest()
         {
             var clientName = _clientEmail.Split("@").First().UpperCaseFirstLetter();

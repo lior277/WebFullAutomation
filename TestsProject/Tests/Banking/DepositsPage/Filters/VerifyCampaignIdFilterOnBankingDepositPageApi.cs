@@ -120,7 +120,7 @@ namespace TestsProject.Tests.Banking.DepositsPage.Filters
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyCampaignIdFilterOnBankingDepositPageApiTest()
         {
             var getDepositsByFirstCampaignId = _apiFactory

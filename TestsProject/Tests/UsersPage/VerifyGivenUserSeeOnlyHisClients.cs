@@ -100,7 +100,7 @@ namespace TestsProject.Tests.UsersPage
         [Category(DataRep.TestCategory)]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyGivenUserSeeOnlyHisClientsTest()
         {
             var agentUserEmail = _agentUserName + DataRep.EmailPrefix;

@@ -88,7 +88,7 @@ namespace TestsProject.Tests.RolePage.Permissions.SettingPermissions
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyChronoTabPermissionApiTest()
         {
             var generalTabSectionNames = new List<string> { "config/global-settings?chrono=true" };

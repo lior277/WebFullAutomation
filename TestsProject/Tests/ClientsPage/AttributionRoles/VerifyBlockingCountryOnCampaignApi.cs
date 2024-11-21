@@ -67,7 +67,7 @@ namespace TestsProject.Tests.ClientsPage.AttributionRoles
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyBlockingCountryOnCampaignApiTest()
         {
             var expectedBlockCountryMessage = "blocked_country";

@@ -98,7 +98,7 @@ namespace TestsProject.Tests.UsersPage
         [Category(DataRep.ApiDocCategory)]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyManagerCanSeeOnlyHisClientsAndDepositsTest()
         {
             var totalDeposits = _apiFactory

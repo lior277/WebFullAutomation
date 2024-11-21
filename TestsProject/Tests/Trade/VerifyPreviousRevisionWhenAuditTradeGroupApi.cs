@@ -117,7 +117,7 @@ namespace TestsProject.Tests.Trade
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyPreviousRevisionWhenAuditTradeGroupApiTest()
         {
             var actualNumOfRevisions = _apiFactory

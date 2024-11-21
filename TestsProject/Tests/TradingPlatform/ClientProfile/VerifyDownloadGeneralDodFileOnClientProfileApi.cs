@@ -65,7 +65,7 @@ namespace TestsProject.Tests.TradingPlatform.ClientProfile
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyDownloadGeneralDodFileOnClientProfileApiTest()
         {
             var expectedPdfText = "Pdf for automation";

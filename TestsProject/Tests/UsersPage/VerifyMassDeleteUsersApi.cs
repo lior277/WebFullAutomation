@@ -84,7 +84,7 @@ namespace TestsProject.Tests.GlobalEventsAndExport.GlobalEvents.Banner
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyMassDeleteUsersApiTest()
         {
             var expectedTypeList = new List<string>()

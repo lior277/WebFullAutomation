@@ -168,7 +168,7 @@ namespace TestsProject.Tests.MarketExposure
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyPendingValuesOnMarketExposureTest()
         {
             var totalNumOfTrades = 2;         

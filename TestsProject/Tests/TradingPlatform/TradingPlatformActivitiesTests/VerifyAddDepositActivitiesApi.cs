@@ -105,7 +105,7 @@ namespace TestsProject.Tests.TradingPlatform.TradingPlatformActivitiesTests
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyAddDepositActivityApiTest()
         {
             var clientName = _clientEmail.Split('@').First();

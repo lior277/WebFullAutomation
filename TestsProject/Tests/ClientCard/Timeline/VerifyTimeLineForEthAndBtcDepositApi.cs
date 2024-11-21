@@ -72,7 +72,7 @@ namespace TestsProject.Tests.ClientCard.TimeLine
         [Description("based on jira: https://airsoftltd.atlassian.net/browse/AIRV2-4625")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyTimeLineForEthAndBtcDepositApiTest()
         {          
             var depositAmount = 10.11111111;

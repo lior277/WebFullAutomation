@@ -79,7 +79,7 @@ namespace TestsProject.Tests.UsersPage
         [Description("Based on jira: https://airsoftltd.atlassian.net/browse/AIRV2-5033")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyGenerationOfNewApiKeyTest()
         {
             var expectedFirstNewApiKeyMessage = "You are about to generate an API key. This" +

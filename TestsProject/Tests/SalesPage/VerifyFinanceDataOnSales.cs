@@ -269,7 +269,7 @@ namespace TestsProject.Tests.SalesPage
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyFinanceDataOnSalesTest()
         {
             #region expectedData          

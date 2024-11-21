@@ -91,7 +91,7 @@ namespace TestsProject.Tests.RolePage.Permissions.AccountPermissions
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyAccountsPermissionsApiTest()
         {
             var expectedError = "Method Not Allowed";

@@ -71,7 +71,7 @@ namespace TestsProject.Tests.TradingPlatform.Chrono
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void ChronoVerifyBlockTradeForZeroBalanceTest()
         {
             var expectedBlockTradeMessage = "Insufficient available funds";

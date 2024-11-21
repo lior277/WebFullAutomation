@@ -108,7 +108,7 @@ namespace TestsProject.Tests.GlobalEventsAndExport.GlobalEvents.Banner
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyGlobalEventForBlockAndReleaseUserApiTest()
         {
             var expectedTypeList = new List<string>()

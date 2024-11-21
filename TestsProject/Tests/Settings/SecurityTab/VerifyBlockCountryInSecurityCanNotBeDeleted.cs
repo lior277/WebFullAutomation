@@ -72,7 +72,7 @@ namespace TestsProject.Tests.Settings.SecurityTab
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyBlockCountryInSecurityCanNotBeDeletedTest()
         {          
             var expectedBlockMessage = "You don't have permission to remove US country. Please contact your account manager.";

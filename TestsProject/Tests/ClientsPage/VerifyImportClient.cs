@@ -100,7 +100,7 @@ namespace TestsProject.Tests.ClientsPage
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyImportClientTest()
         {
             var expectedClientFullName = _newClientEmail.Split('@').First();

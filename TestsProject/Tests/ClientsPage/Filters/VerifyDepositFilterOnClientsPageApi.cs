@@ -114,7 +114,7 @@ namespace TestsProject.Tests.ClientsPage.Filters
         [Description("based on jira https://airsoftltd.atlassian.net/browse/AIRV2-5054")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyDepositFilterOnClientsPageApiTest()
         {
             var dbContext = new QaAutomation01Context();

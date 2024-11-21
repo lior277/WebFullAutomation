@@ -126,7 +126,7 @@ namespace TestsProject.Tests.RolePage.Permissions.TradePermissions
         [Description("BUG get Trade Groups Error Message: Method Not Allowed")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyTradePermissionsApiTest()
         {
             var cryptoGroupName = TextManipulation.RandomString();

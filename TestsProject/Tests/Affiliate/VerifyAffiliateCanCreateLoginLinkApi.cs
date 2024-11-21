@@ -78,7 +78,7 @@ namespace TestsProject.Tests.Affiliate
         [Category(DataRep.ApiDocCategory)]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyAgentCanCreateLoginLinkApiTest()
         {
             var expectedClientName = _clientName

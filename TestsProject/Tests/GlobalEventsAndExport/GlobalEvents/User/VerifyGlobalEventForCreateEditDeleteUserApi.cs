@@ -92,7 +92,7 @@ namespace TestsProject.Tests.GlobalEventsAndExport.GlobalEvents.Banner
         [Description("BUG TYPE DELETE AND RESTORE")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyGlobalEventForCreateEditDeleteUserApiTest()
         {
             var expectedTypeList = new List<string>()

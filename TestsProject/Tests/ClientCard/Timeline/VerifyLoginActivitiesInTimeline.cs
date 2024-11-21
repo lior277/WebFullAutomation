@@ -171,7 +171,7 @@ namespace TestsProject.Tests.ClientCard.TimeLine
         [Test]
         [Category(DataRep.SanityCategory)]       
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyLoginActivitiesInTimelineTest()
         {
             var expectedDate = DateTime.Now.ToString("ddd MMM dd yyy");          

@@ -135,7 +135,7 @@ namespace TestsProject.Tests.Banking.DepositsPage.Filters
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyStatusFilterOnBankingDepositPageTest()
         {
             var chooseFtdValue = "Only FTD";

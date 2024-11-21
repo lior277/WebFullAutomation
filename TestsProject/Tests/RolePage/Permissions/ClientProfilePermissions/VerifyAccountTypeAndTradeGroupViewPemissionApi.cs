@@ -169,7 +169,7 @@ namespace TestsProject.Tests.RolePage.Permissions.ClientProfilePermissions
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyAccountTypeAndTradeGroupViewPermissionApiTest()
         {
             // update client card with the new account type

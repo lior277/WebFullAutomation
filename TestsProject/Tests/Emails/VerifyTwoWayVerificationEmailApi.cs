@@ -51,7 +51,7 @@ namespace TestsProject.Tests.Emails
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyTwoWayVerificationEmailApiTest()
         {
             var subject = "Email Verification - BrandName";

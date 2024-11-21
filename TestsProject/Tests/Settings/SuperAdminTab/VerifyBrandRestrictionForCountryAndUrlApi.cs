@@ -91,7 +91,7 @@ namespace TestsProject.Tests.Settings.SuperAdminTab
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyBrandRestrictionForCountryAndUrlApiTest()
         {
             var expectedRedirectUrl = _expectedRedirectUrl;

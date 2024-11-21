@@ -186,7 +186,7 @@ namespace TestsProject.Tests.ClientsPage.Filters
         [Description("Based on https://airsoftltd.atlassian.net/browse/AIRV2-5143")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyFiltersOnClientsPageApiTest()
         {
             // dont delete , wait for client to be online in redis

@@ -101,7 +101,7 @@ namespace TestsProject.Tests.RolePage.Permissions
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifySearchPermissionTest()
         {
             var permissionName = "Forward message ";

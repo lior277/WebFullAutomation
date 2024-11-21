@@ -182,7 +182,7 @@ namespace TestsProject.Tests.ClientCard
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]      
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]      
         public void VerifyTransactionsSammeryOnFinanceTabTest()
         {
             var expectedTransactionSammeryData = new Dictionary<string, string>();

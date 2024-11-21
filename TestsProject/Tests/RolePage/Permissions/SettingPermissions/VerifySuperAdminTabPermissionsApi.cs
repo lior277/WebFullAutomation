@@ -92,7 +92,7 @@ namespace TestsProject.Tests.RolePage.Permissions.SettingPermissions
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifySuperAdminTabPermissionsApiTest()
         {
             var superAdminTabSectionNames = new List<string> { "config/platform",

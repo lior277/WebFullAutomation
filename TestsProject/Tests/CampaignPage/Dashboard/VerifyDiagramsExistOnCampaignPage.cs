@@ -75,7 +75,7 @@ namespace TestsProject.Tests.CampaignPage.Dashboard
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyDiagramsExistOnCampaignPageTest()
         {
             _apiFactory

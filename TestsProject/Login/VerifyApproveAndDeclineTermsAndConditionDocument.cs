@@ -111,7 +111,7 @@ namespace TestsProject.Login
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyApproveAndDeclineTermsAndConditionDocumentTest()
         {
             var expectedTimeLineDeclineType = "block_client_due_decline_terms_and_conditions";

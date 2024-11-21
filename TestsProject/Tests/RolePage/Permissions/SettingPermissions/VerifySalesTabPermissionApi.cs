@@ -121,7 +121,7 @@ namespace TestsProject.Tests.RolePage.Permissions.SettingPermissions
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifySalesTabPermissionApiTest()
         {
             var salesTabSectionNames = new List<string> { $"saving-account/{_savingAccountId}",

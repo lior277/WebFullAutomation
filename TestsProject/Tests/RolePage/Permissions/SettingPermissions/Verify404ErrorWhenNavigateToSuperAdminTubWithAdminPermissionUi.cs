@@ -77,7 +77,7 @@ namespace TestsProject.Tests.RolePage.Permissions.SettingPermissions
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void Verify404ErrorWhenNavigateToSuperAdminTubWithAdminPermissionUiTest()
         {
             var expectedError = "AIRSOFT Error 404 something's not right here  the page" +

@@ -131,7 +131,7 @@ namespace TestsProject.Tests.RolePage.Permissions.ClientProfilePermissions
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyUserSavingAccountPermissionApiTest()
         {
             var _tradingPlatformUrl = Config.appSettings.tradingPlatformUrl;

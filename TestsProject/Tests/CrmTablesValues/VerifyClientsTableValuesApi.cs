@@ -143,7 +143,7 @@ namespace TestsProject.Tests.TablesValues
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyClientsTableValuesApiTest()
         {
             var date = DateTime.Now.ToString("dd/MM/yyyy");

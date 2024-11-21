@@ -195,7 +195,7 @@ namespace TestsProject.Tests.Emails
         //[Ignore("under develop")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyCampaignCapErrorAndEmailForImportClientApiTest()
         {
             var expectedEmailBody = "  Import Leads Report " +

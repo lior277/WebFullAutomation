@@ -62,7 +62,7 @@ namespace TestsProject.Tests.ClientCard
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyCreateDepositWithWooCommerceAgentTest()
         {
             var expectedPspTransactionId = "Beginner courses - woocommerce-1572"; // default values in the request;

@@ -68,7 +68,7 @@ namespace TestsProject.Tests
         [Description("based on jira https://airsoftltd.atlassian.net/browse/AIRV2-4497")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyUserSalaryTypeIsNullAfterDeleteTheSalaryTypeApiTest()
         {
             object expectedUserSalaryValue = null;

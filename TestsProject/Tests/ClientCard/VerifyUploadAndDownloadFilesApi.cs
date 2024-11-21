@@ -93,7 +93,7 @@ namespace TestsProject.Tests.ClientCard
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyUploadAndDownloadFilesApiTest()
         {
             var expectedKycFileType = "kyc_proof_of_identity";

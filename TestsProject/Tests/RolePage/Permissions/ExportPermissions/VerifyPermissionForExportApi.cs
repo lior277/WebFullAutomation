@@ -177,7 +177,7 @@ namespace TestsProject.Tests.RolePage.Permissions.ExportPermissions
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyPermissionForExportApiTest()
         {
             var expectedExportTableErrorMessage = "Method Not Allowed";

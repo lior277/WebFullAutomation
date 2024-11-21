@@ -136,7 +136,7 @@ namespace TestsProject.Tests.ClientsPage
         [Description("based on jira: https://airsoftltd.atlassian.net/browse/AIRV2-4713")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyDepositAndCampaignAssignmentAfterChangeCampaignApiTest()
         {
             var expectedCampaignName = _secondCampaignName;

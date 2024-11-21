@@ -173,7 +173,7 @@ namespace TestsProject.Tests.CrmTrade.CloseTradePage
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyToolTipOnCloseTradePageTest()
         {
             var expectedTooltipText = $"Starting Spread: 0.1 Current Spread: 0.2 leverage: {_leverage}";

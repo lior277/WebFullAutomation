@@ -1,0 +1,449 @@
+services:
+  rabbitmq:
+    build:
+      context: .
+      dockerfile: DockerFile.rabbitmq
+    container_name: dockercompose-rabbitmq-1
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
+    healthcheck:
+      test: [ "CMD", "rabbitmqctl", "await_startup" ]
+      interval: 10s
+      retries: 5
+    networks:
+      - app-net
+  
+  kafka:
+    image: docker.io/bitnami/kafka:3.6
+    hostname: kafka
+    ports:
+      - "9094:9094"
+      - "9092:9092"
+    volumes:
+      - kafka_data:/bitnami
+      - kafka_logs:/opt/bitnami/kafka/logs 
+      - ./Scripts/kafka-healthcheck.sh:/Scripts/kafka-healthcheck.sh:ro
+    environment:
+      - KAFKA_HEAP_OPTS=-Xms4g -Xmx8g
+      - KAFKA_CFG_NODE_ID=0
+      - KAFKA_CFG_PROCESS_ROLES=controller,broker
+      - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka:9093
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093,EXTERNAL://:9094
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,EXTERNAL:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092,EXTERNAL://localhost:9094
+      - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+      - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=PLAINTEXT
+      - KAFKA_CFG_MESSAGE_MAX_BYTES=500000000
+      - KAFKA_CFG_SOCKET_REQUEST_MAX_BYTES=500000000
+      - KAFKA_CFG_FETCH_MAX_BYTES=500000000
+      - KAFKA_CFG_REPLICA_FETCH_MAX_BYTES=500000000
+      - KAFKA_CFG_MAX_PARTITION_FETCH_BYTES=500000000
+    healthcheck:
+      test: [ "CMD", "./Scripts/kafka-healthcheck.sh" ]
+      start_period: 15s
+      interval: 10s
+    networks:
+      - app-net
+
+  kafka-ui:
+    container_name: kafka-ui
+    image: provectuslabs/kafka-ui:latest
+    depends_on:
+      kafka:
+        condition: service_healthy
+    ports:
+      - "51287:8080"
+    environment:
+      - DYNAMIC_CONFIG_ENABLED=true
+      - KAFKA_CLUSTERS_0_NAME=hermes
+      - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=kafka:9092
+      - KAFKA_CLUSTERS_0_PROPERTIES_FILE=/config/kafka-cluster-hermes.properties
+      - KAFKA_CLUSTERS_1_NAME=CDC
+      - KAFKA_CLUSTERS_1_BOOTSTRAPSERVERS=kafka:9092
+      - KAFKA_CLUSTERS_1_PROPERTIES_FILE=/config/kafka-cluster-cdc.properties
+    volumes:
+      - ./DockerCompose/Properties/kafka-cluster-hermes.properties:/config/kafka-cluster-hermes.properties
+      - ./DockerCompose/Properties/kafka-cluster-cdc.properties:/config/kafka-cluster-cdc.properties
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:8080 || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - app-net
+  
+  redis:
+    image: "redis:latest"
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - app-net  # Connect to the custom network
+  
+  mysql:
+    image: mysql:8.0
+    platform: linux/amd64
+    hostname: mysql
+    environment:
+      - MYSQL_ROOT_HOST=%
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=data
+      - MYSQLD_HOST_CACHE_SIZE=0
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./Scripts/00-create-databases.sql:/docker-entrypoint-initdb.d/00-create-databases.sql:ro
+      - ./Scripts/01-init-mappingdata.sql:/docker-entrypoint-initdb.d/01-init-mappingdata.sql:ro
+      - ./Scripts/02-init-data.sql:/docker-entrypoint-initdb.d/02-init-data.sql:ro
+      - ./Scripts/03-init-playersmanager.sql:/docker-entrypoint-initdb.d/03-init-playersmanager.sql:ro
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    restart: always
+    networks:
+      - app-net
+    command: --default-authentication-plugin=mysql_native_password
+  
+  
+  gatekeeper:
+    image: 239071824248.dkr.ecr.eu-west-1.amazonaws.com/di-fixture-manager-gatekeeper:90a8395badf19a9ebc5afaf809de5d9c5fb1bc9b
+    hostname: gatekeeper
+    platform: linux/amd64
+    ports:
+      - "8081:8081"
+    environment:
+      - DB_MYSQL_MAIN_REPLICA_DI_HOST=mysql
+      - DB_MYSQL_MAIN_USERNAME=root
+      - DB_MYSQL_MAIN_PASSWORD=admin
+      - DB_REDIS_DI_METADATA_CLUSTERED_ENDPOINT=redis
+      - MESSAGE_BROKER_KAFKA_HERMES_BOOTSTRAP_BROKER_TLS=kafka:9092
+      - MESSAGE_BROKER_RMQ_OS_ENDPOINT=rabbitmq:5672
+      - MESSAGE_BROKER_RMQ_OS_LSPORTSRUNNER_USERNAME=admin
+      - MESSAGE_BROKER_RMQ_OS_LSPORTSRUNNER_PASSWORD=admin
+      - ASPNETCORE_ENVIRONMENT=Automation
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:8081/health || exit 1 && redis-cli -h redis ping || exit 1 && ./scripts/kafka-topic-healthcheck.sh kafka:9092 DI.ProviderFixture.Raw || exit 1"]
+    networks:
+      - app-net  # Connect to the custom network
+    depends_on:
+      kafka:
+        condition: service_healthy
+      mysql:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+
+  data-enricher:
+    image: 239071824248.dkr.ecr.eu-west-1.amazonaws.com/di-fixture-manager-data-enricher:5215b0a264fbe5867b29176195b2180c83fcf414
+    platform: linux/amd64
+    hostname: data-enricher
+    ports:
+      - "8082:8082"
+    environment:
+      - DB_MYSQL_MAIN_REPLICA_DI_HOST=mysql
+      - DB_MYSQL_MAIN_USERNAME=root
+      - DB_MYSQL_MAIN_PASSWORD=admin
+      - DB_REDIS_DI_METADATA_CLUSTERED_ENDPOINT=redis
+      - MESSAGE_BROKER_KAFKA_HERMES_BOOTSTRAP_BROKER_TLS=kafka:9092
+      - ASPNETCORE_ENVIRONMENT=Automation
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:8082/health || exit 1 && redis-cli -h redis ping || exit 1 && ./scripts/kafka-topic-healthcheck.sh kafka:9092 DI.ProviderFixture.Validated || exit 1"]
+      interval: 60s
+      timeout: 30s
+      retries: 6
+      start_period: 120s
+    networks:
+      - app-net  # Connect to the custom network
+    depends_on:
+      kafka:
+        condition: service_healthy
+
+  metadata-mapper:
+    image: 239071824248.dkr.ecr.eu-west-1.amazonaws.com/di-fixture-manager-metadata-mapper:fe2df6bcad1f1941c1467e7055d23d645aad720e
+    hostname: metadata-mapper
+    platform: linux/amd64
+    ports:
+      - "8083:5053"
+    environment:
+      - DB_MYSQL_MAIN_REPLICA_DI_HOST=mysql
+      - DB_MYSQL_MAIN_USERNAME=root
+      - DB_MYSQL_MAIN_PASSWORD=admin
+      - DB_REDIS_DI_METADATA_CLUSTERED_ENDPOINT=redis
+      - MESSAGE_BROKER_KAFKA_HERMES_BOOTSTRAP_BROKER_TLS=kafka:9092
+      - MESSAGE_BROKER_RMQ_OS_ENDPOINT=rabbitmq:5672
+      - MESSAGE_BROKER_RMQ_OS_LSPORTSRUNNER_USERNAME=admin
+      - MESSAGE_BROKER_RMQ_OS_LSPORTSRUNNER_PASSWORD=admin
+      - ASPNETCORE_ENVIRONMENT=Automation
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:5053/health || exit 1" ]
+      interval: 60s
+      timeout: 30s
+      retries: 6
+      start_period: 300s  # Increase to 5 
+    networks:
+      - app-net  # Connect to the custom network
+    depends_on:
+      kafka:
+        condition: service_healthy
+      mysql:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+
+  fixture-mapper:
+    image: 239071824248.dkr.ecr.eu-west-1.amazonaws.com/di-fixture-manager-fixture-mapper:008f9b03f807ef831d20dd1579b82714bf1827dd
+    hostname: fixture-mapper
+    platform: linux/amd64
+    ports:
+      - "8084:8084"
+    environment:
+      - DB_MYSQL_MAIN_REPLICA_DI_HOST=mysql
+      - DB_MYSQL_MAIN_USERNAME=root
+      - DB_MYSQL_MAIN_PASSWORD=admin
+      - DB_REDIS_DI_METADATA_CLUSTERED_ENDPOINT=redis
+      - MESSAGE_BROKER_KAFKA_HERMES_BOOTSTRAP_BROKER_TLS=kafka:9092
+      - ASPNETCORE_ENVIRONMENT=Automation
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:8084/health || exit 1 && redis-cli -h redis ping || exit 1 && ./scripts/kafka-topic-healthcheck.sh kafka:9092 DI.ProviderFixture.MetadataMapped || exit 1"]
+      interval: 60s
+      timeout: 30s
+      retries: 6
+      start_period: 120s
+    networks:
+      - app-net  # Connect to the custom network
+    depends_on:
+      kafka:
+        condition: service_healthy
+      mysql:
+        condition: service_healthy
+  
+  metadata-api:
+    image: 239071824248.dkr.ecr.eu-west-1.amazonaws.com/di-fixture-manager-metadata-api:65b73aa1bfb07b2777c630db317cc41bb1933ba6
+    hostname: metadata-api
+    platform: linux/amd64
+    ports:
+      - "8085:5054"
+    environment:
+      - DB_MYSQL_MAIN_HOST=mysql
+      - DB_MYSQL_MAIN_USERNAME=root
+      - DB_MYSQL_MAIN_PASSWORD=admin
+      - MESSAGE_BROKER_RMQ_OS_ENDPOINT=rabbitmq:5672
+      - MESSAGE_BROKER_RMQ_OS_LSPORTSRUNNER_USERNAME=admin
+      - MESSAGE_BROKER_RMQ_OS_LSPORTSRUNNER_PASSWORD=admin
+      - DB_REDIS_DI_METADATA_CLUSTERED_ENDPOINT=redis
+      - ASPNETCORE_ENVIRONMENT=Automation
+    healthcheck:
+      test: ["CMD-SHELL", "curl -v http://localhost:5054/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 60s
+    networks:
+      - app-net  # Connect to the custom network
+    depends_on:
+      kafka:
+        condition: service_healthy
+      mysql:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+  
+  conflict-handler:
+    image: 239071824248.dkr.ecr.eu-west-1.amazonaws.com/di-fixture-manager-conflict-handler:f23f8eeda9ccb58d0a0189f07309d94396827895
+    hostname: conflict-handler
+    platform: linux/amd64
+    ports:
+      - "8086:8086"
+    environment:
+      - DB_MYSQL_MAIN_HOST=mysql
+      - DB_MYSQL_MAIN_USERNAME=root
+      - DB_MYSQL_MAIN_PASSWORD=admin
+      - MESSAGE_BROKER_KAFKA_HERMES_BOOTSTRAP_BROKER_TLS=kafka:9092
+      - MESSAGE_BROKER_RMQ_OS_ENDPOINT=rabbitmq:5672
+      - MESSAGE_BROKER_RMQ_OS_LSPORTSRUNNER_USERNAME=admin
+      - MESSAGE_BROKER_RMQ_OS_LSPORTSRUNNER_PASSWORD=admin
+      - ASPNETCORE_ENVIRONMENT=Automation
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -q --spider http://localhost:8086/health" ]
+      interval: 60s
+      timeout: 30s
+      retries: 6
+      start_period: 120s
+    networks:
+      - app-net  # Connect to the custom network
+    depends_on:
+      kafka:
+        condition: service_healthy
+      mysql:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+  
+  reprocess-manager:
+    image: 239071824248.dkr.ecr.eu-west-1.amazonaws.com/di-fixture-manager-reprocess-manager:f8ed4973feb81820ebe7b26c231500e46d9788f5
+    hostname: reprocess-manager
+    platform: linux/amd64
+    ports:
+      - "8087:8087"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Automation
+      - RoadRunnerConsumerConfig__ConnectionConfig__UseTls=false
+      - RoadRunnerProducerConfig__ConnectionConfig__UseTls=false
+      - security.protocol=PLAINTEXT
+      - DB_MYSQL_MAIN_HOST=mysql
+      - DB_REDIS_DI_METADATA_CLUSTERED_ENDPOINT=redis
+      - MESSAGE_BROKER_KAFKA_CDC_BOOTSTRAP_BROKER_SCRAM=kafka:9092
+      - MESSAGE_BROKER_KAFKA_HERMES_BOOTSTRAP_BROKER_TLS=kafka:9092
+      - Redis__AbortOnConnectFail=false
+      # other env vars
+    
+    depends_on:
+      kafka:
+        condition: service_healthy
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -q --spider http://localhost:8087/health || exit 1 && redis-cli -h redis ping || exit 1 && ./scripts/kafka-topic-healthcheck.sh kafka:9092 DI.ProviderFixture.FixtureMapped || exit 1" ]
+      interval: 60s
+      timeout: 30s
+      retries: 6
+      start_period: 120s
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+        reservations:
+          memory: 6G
+    networks:
+      - app-net  # Connect to the custom network
+  
+  group-finder:
+    image: 239071824248.dkr.ecr.eu-west-1.amazonaws.com/di-fixture-manager-group-finder:4782e328212f46a79cc74cd139471351e49d0d74
+    hostname: group-finder
+    platform: linux/amd64
+    ports:
+      - "8088:8088"
+    environment:
+      - DB_MYSQL_MAIN_HOST=mysql
+      - DB_MYSQL_MAIN_USERNAME=root
+      - DB_MYSQL_MAIN_PASSWORD=admin
+      - MESSAGE_BROKER_KAFKA_HERMES_BOOTSTRAP_BROKER_TLS=kafka:9092
+      - DB_REDIS_DI_METADATA_CLUSTERED_ENDPOINT=redis
+      - ASPNETCORE_ENVIRONMENT=Automation
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -q --spider http://localhost:8088/health || exit 1 && redis-cli -h redis ping || exit 1" ]
+      interval: 60s
+      timeout: 30s
+      retries: 6
+      start_period: 120s
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+        reservations:
+          memory: 6G
+    networks:
+      - app-net  # Connect to the custom network
+    depends_on:
+      kafka:
+        condition: service_healthy
+      mysql:
+        condition: service_started
+  
+  processor:
+    image: 239071824248.dkr.ecr.eu-west-1.amazonaws.com/di-fixture-manager-processor:9f4181fc1ee964c14cdf002166a944da1b576d12
+    hostname: processor
+    platform: linux/amd64
+    ports:
+      - "8101:8101"  # Port mapping for external access
+    environment:
+      - DB_MYSQL_MAIN_HOST=mysql
+      - DB_MYSQL_MAIN_USERNAME=root
+      - DB_MYSQL_MAIN_PASSWORD=admin
+      - MESSAGE_BROKER_KAFKA_HERMES_BOOTSTRAP_BROKER_TLS=kafka:9092
+      - security.protocol=PLAINTEXT
+      - DB_REDIS_DI_METADATA_CLUSTERED_ENDPOINT=redis
+      - MESSAGE_BROKER_RMQ_OS_ENDPOINT=rabbitmq  # Referencing RabbitMQ service in Docker network
+      - MESSAGE_BROKER_RMQ_OS_LSPORTSRUNNER_USERNAME=admin
+      - MESSAGE_BROKER_RMQ_OS_LSPORTSRUNNER_PASSWORD=admin
+      - ASPNETCORE_ENVIRONMENT=Automation
+    depends_on:
+      kafka:
+        condition: service_healthy
+      mysql:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    healthcheck:
+      test: [
+        "CMD-SHELL",
+        "wget -q --spider http://localhost:8101/health || exit 1 && redis-cli -h redis ping || exit 1 && ./scripts/kafka-topic-healthcheck.sh kafka:9092 DI.ProviderFixture.Grouped || exit 1"
+      ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - app-net  # Ensure it's on the same network as other services
+  
+  
+  connect:
+    image: confluentinc/cp-kafka-connect:7.2.1
+    hostname: connect
+    container_name: connect
+    ports:
+      - "8100:8100"
+    environment:
+      - CONNECT_BOOTSTRAP_SERVERS=kafka:9092
+      - CONNECT_REST_ADVERTISED_HOST_NAME=connect
+      - CONNECT_REST_PORT=8300
+      - CONNECT_GROUP_ID=connect-cluster
+      - CONNECT_CONFIG_STORAGE_TOPIC=connect-configs
+      - CONNECT_OFFSET_STORAGE_TOPIC=connect-offsets
+      - CONNECT_STATUS_STORAGE_TOPIC=connect-statuses
+      - CONNECT_KEY_CONVERTER=org.apache.kafka.connect.storage.StringConverter
+      - CONNECT_VALUE_CONVERTER=org.apache.kafka.connect.storage.StringConverter
+      - CONNECT_INTERNAL_KEY_CONVERTER=org.apache.kafka.connect.json.JsonConverter
+      - CONNECT_INTERNAL_VALUE_CONVERTER=org.apache.kafka.connect.json.JsonConverter
+      - CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR=1
+      - CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR=1
+      - CONNECT_STATUS_STORAGE_REPLICATION_FACTOR=1
+      - KAFKA_HEAP_OPTS=-Xms1g -Xmx2g
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:8100/ 1>/dev/null" ]
+      interval: 5s
+      timeout: 10s
+      retries: 5
+    networks:
+      - app-net
+    depends_on:
+      kafka:
+        condition: service_healthy
+
+volumes:
+  rabbitmq_data:
+  kafka_data:
+    driver: local  
+  kafka_logs:
+    driver: local
+  mysql_data:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  app-net:
+    driver: bridge

@@ -65,7 +65,7 @@ namespace TestsProject.Tests.GlobalEventsAndExport.GlobalEvents
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyGlobalEventForCreateDocumentApiTest()
         {
             var expectedActionMadeByUser = _userName;

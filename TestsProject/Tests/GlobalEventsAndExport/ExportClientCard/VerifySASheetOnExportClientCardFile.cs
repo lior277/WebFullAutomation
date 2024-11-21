@@ -129,7 +129,7 @@ namespace TestsProject.Tests.GlobalEventsAndExport.ExportClientCard
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifySASheetOnExportClientCardFileTest()
         {
             var expectedDate = DateTime.Now.ToString("dd/MM/yyyy");

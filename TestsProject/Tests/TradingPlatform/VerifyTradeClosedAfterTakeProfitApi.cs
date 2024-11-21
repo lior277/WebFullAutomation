@@ -113,7 +113,7 @@ namespace TestsProject.Tests.TradingPlatform
         [Test]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyTradeClosedAfterTakeProfitApiTest()
         {          
                 Assert.True(_closeReason == "trade tp close",

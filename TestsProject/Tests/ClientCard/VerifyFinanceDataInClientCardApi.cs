@@ -43,7 +43,7 @@ namespace TestsProject.Tests.ClientCard
             nameof(FinanceFactoryApi.RetrieveTestsFromFinanceDataOfClientCardTable))]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyFinanceDataInClientCardApiTest(TestCase testCase)
         {
             var apiFactory = new ApplicationFactory();

@@ -117,7 +117,7 @@ namespace TestsProject.Tests.ClientsPage
         [Category(DataRep.ApiDocCategory)]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyMassAssignTest()
         {
             var comment = "Automation comment";

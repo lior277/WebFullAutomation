@@ -142,7 +142,7 @@ namespace TestsProject.Tests.ClientCard
         [Description("Based on https://airsoftltd.atlassian.net/browse/AIRV2-5229")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyEditSwapPermissionApiTest()
         {
             var expectedError = "Method Not Allowed";

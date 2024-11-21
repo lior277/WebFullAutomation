@@ -138,7 +138,7 @@ namespace TestsProject.Tests.Settings.SuperAdminTab
         [Description("based on jira https://airsoftltd.atlassian.net/browse/AIRV2-4642")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyCreateGroupWhenChangeSpreadDisableApiTest()
         {
             double? expectedSpread = null;

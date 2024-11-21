@@ -82,7 +82,7 @@ namespace TestsProject.Tests.ClientCard
         [Description("based on https://airsoftltd.atlassian.net/browse/AIRV2-5003")]
         [Category(DataRep.SanityCategory)]
         [Category(DataRep.RegressionCategory)]
-        [RetryMenage(DataRep.NumOfRetraiesForFallingTest)]
+        [RetryMenage(DataRep.NumOfRetriesForFallingTest)]
         public void VerifyBalanceNotRoundedWhenConvertedAndBaseCurrencyAreTheSameApiTest()
         {
             // based on that the airsoft psp has converted to USD value
